@@ -1,5 +1,5 @@
 package com.Application.BlogApp.data.repository;
-import com.Application.BlogApp.data.model.Posts;
+import com.Application.BlogApp.data.model.Post;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @DataMongoTest
 public class PostsRepositoryTest {
     @Autowired
-    PostsRepository postsRepository;
+    PostRepository postsRepository;
 
     @BeforeEach
     public void setUp(){
@@ -18,7 +18,7 @@ public class PostsRepositoryTest {
     }
     @Test
     public void testToSaveAPostInTheRepository(){
-        Posts post = new Posts();
+        Post post = new Post();
         post.setContent("Content");
         post.setTitle("Title");
         postsRepository.save(post);
@@ -26,8 +26,8 @@ public class PostsRepositoryTest {
     }
     @Test
     public void testToSaveTwiceInToTheRepository(){
-        Posts posts = new Posts();
-        Posts posts1 = new Posts();
+        Post posts = new Post();
+        Post posts1 = new Post();
         posts.setContent("Content");
         posts.setTitle("Title");
         posts.setContent("ContentOne");
@@ -38,7 +38,7 @@ public class PostsRepositoryTest {
     }
     @Test
     public void testToCreatePostInTheRepository(){
-        Posts posts = new Posts();
+        Post posts = new Post();
         posts.setContent("Content");
         posts.setTitle("Title");
         postsRepository.save(posts);

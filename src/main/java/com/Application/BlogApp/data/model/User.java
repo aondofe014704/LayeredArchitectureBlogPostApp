@@ -1,6 +1,7 @@
 package com.Application.BlogApp.data.model;
 
 import lombok.Data;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ public class User {
     private String password;
     private String userName;
     private boolean isLogin;
-    private List<Posts> listOfPost = new ArrayList<>();
+    @DBRef
+    private List<Post> listOfPost = new ArrayList<>();
 
 }

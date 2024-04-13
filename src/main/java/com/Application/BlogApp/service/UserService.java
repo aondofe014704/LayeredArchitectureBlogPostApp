@@ -2,6 +2,8 @@ package com.Application.BlogApp.service;
 
 import com.Application.BlogApp.data.model.User;
 import com.Application.BlogApp.dtos.requests.*;
+import com.Application.BlogApp.dtos.response.CreateCommentResponse;
+import com.Application.BlogApp.dtos.response.CreatePostResponse;
 
 
 public interface UserService {
@@ -10,13 +12,10 @@ public interface UserService {
 
     long numberOfUsers();
 
-    void login(LoginUserRequest loginUserRequest);
+    boolean login(LoginUserRequest loginUserRequest);
 
-    void createPosts(CreatePostsRequest createPostsRequest);
-
-    void createComment(CreateCommentRequest createCommentRequest);
-
-    void viewPosts(CreateViewsRequest createViewsRequest);
+    CreatePostResponse createPost(CreatePostRequest createPostsRequest);
+    void viewPosts(CreateViewRequest createViewsRequest);
 
     void deletePost(DeletePostRequest deletePostRequest);
 
